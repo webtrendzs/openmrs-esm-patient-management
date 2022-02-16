@@ -113,4 +113,4 @@ function setupOpenMRS() {
   };
 }
 
-export { backendDependencies, frontendDependencies, importTranslation, setupOpenMRS };
+export { backendDependencies, importTranslation, setupOpenMRS };
