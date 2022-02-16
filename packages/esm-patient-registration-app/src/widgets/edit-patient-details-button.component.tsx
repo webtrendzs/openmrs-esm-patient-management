@@ -1,5 +1,5 @@
 import React from 'react';
-import { navigate } from '@openmrs/esm-framework';
+import { navigate, UserHasAccess } from '@openmrs/esm-framework';
 import { useTranslation } from 'react-i18next';
 import styles from './edit-patient-details-button.scss';
 
@@ -16,6 +16,7 @@ const EditPatientDetailsButton: React.FC<EditPatientDetailsButtonProps> = ({ pat
   }, [onTransition, patientUuid]);
 
   return (
+    <UserHasAccess privilege='Edit Patients'>
     <li className="bx--overflow-menu-options__option">
       <button
         className="bx--overflow-menu-options__btn"
@@ -28,6 +29,7 @@ const EditPatientDetailsButton: React.FC<EditPatientDetailsButtonProps> = ({ pat
         </span>
       </button>
     </li>
+    </UserHasAccess>
   );
 };
 

@@ -5,7 +5,7 @@ import { Button, HeaderGlobalAction, Search } from 'carbon-components-react';
 import PatientSearch from '../patient-search/patient-search.component';
 import { useTranslation } from 'react-i18next';
 import debounce from 'lodash-es/debounce';
-import { useConfig, useLayoutType } from '@openmrs/esm-framework';
+import { useConfig, useLayoutType, UserHasAccess } from '@openmrs/esm-framework';
 import { performPatientSearch } from '../patient-search/patient-search.resource';
 import isEmpty from 'lodash-es/isEmpty';
 import { SearchedPatient } from '../types';
@@ -116,7 +116,7 @@ const PatientSearchLaunch: React.FC<PatientSearchLaunchProps> = () => {
   }, [searchTerm]);
 
   return (
-    <>
+    <UserHasAccess privilege="Search Patients">
       <div className={styles.patientSearchIconWrapper}>
         {open && (
           <div className={styles.searchArea}>
@@ -153,7 +153,7 @@ const PatientSearchLaunch: React.FC<PatientSearchLaunchProps> = () => {
       {open && (
         <PatientSearch hidePanel={handleCloseSearchPanel} searchResults={searchResults} status={status} error={error} />
       )}
-    </>
+    </UserHasAccess>
   );
 };
 
