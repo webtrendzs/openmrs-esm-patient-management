@@ -82,7 +82,7 @@ export const PatientRegistration: React.FC<PatientRegistrationProps> = ({ savePa
 
     // `=== false` is here on purpose (`inEditMode` is a triple state value).
     // We *only* want to set initial address field values when *creating* a patient.
-    // We must wait until after loading for this info.
+    // We must wait until after loading for this info. OK
     if (inEditMode === false) {
       for (const { name, defaultValue } of addressFieldValues) {
         if (!initialAddressFieldValues[name]) {
