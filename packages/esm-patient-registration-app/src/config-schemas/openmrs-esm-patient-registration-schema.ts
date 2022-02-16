@@ -1,6 +1,8 @@
 import { Type, validators } from '@openmrs/esm-framework';
 const builtInFields = ['name', 'gender', 'dob', 'address', 'id', 'death'];
 
+
+
 export const esmPatientRegistrationSchema = {
   sections: {
     _type: Type.Array,
