@@ -3,7 +3,6 @@ import { registerBreadcrumbs, defineConfigSchema, getAsyncLifecycle } from '@ope
 import {
   fetchCurrentSession,
   fetchAddressTemplate,
-  fetchPatientIdentifierTypesWithSources,
   fetchAllRelationshipTypes,
 } from './offline.resources';
 import { esmPatientRegistrationSchema } from './config-schemas/openmrs-esm-patient-registration-schema';
@@ -11,6 +10,7 @@ import { moduleName, patientRegistration } from './constants';
 import { setupOffline } from './offline';
 
 const importTranslation = require.context('../translations', false, /.json$/, 'lazy');
+import { fetchPatientIdentifierTypesWithSources } from './patient-identifier-types-with-sources-mock';
 
 const backendDependencies = {
   'webservices.rest': '^2.24.0',

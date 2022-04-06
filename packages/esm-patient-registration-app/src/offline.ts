@@ -10,11 +10,11 @@ import { cacheForOfflineHeaders, patientRegistration } from './constants';
 import {
   fetchAddressTemplate,
   fetchAllRelationshipTypes,
-  fetchCurrentSession,
-  fetchPatientIdentifierTypesWithSources,
+  fetchCurrentSession
 } from './offline.resources';
 import FormManager from './patient-registration/form-manager';
 import { PatientRegistration } from './patient-registration/patient-registration-types';
+import { fetchPatientIdentifierTypesWithSources } from './patient-identifier-types-with-sources-mock';
 
 export function setupOffline() {
   setupOfflineSync(patientRegistration, [], syncPatientRegistration);
